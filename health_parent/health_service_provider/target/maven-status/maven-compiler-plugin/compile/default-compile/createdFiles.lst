@@ -1,0 +1,6 @@
+com\healthMedical\mapper\checkitemMapper.class
+com\healthMedical\service\impl\setMealServiceImpl.class
+com\healthMedical\mapper\checkGroupMapper.class
+com\healthMedical\mapper\setMealMapper.class
+com\healthMedical\service\impl\checkGroupServiceImpl.class
+com\healthMedical\service\impl\checkitemServiceImpl.class

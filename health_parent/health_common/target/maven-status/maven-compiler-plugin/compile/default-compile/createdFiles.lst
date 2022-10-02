@@ -1,0 +1,16 @@
+com\healthMedical\pojo\Role.class
+com\healthMedical\entity\PageResult.class
+com\healthMedical\pojo\User.class
+com\healthMedical\pojo\Order.class
+com\healthMedical\constant\MessageConstant.class
+com\healthMedical\pojo\CheckGroup.class
+com\healthMedical\constant\RedisConstant.class
+com\healthMedical\entity\Result.class
+com\healthMedical\pojo\Permission.class
+com\healthMedical\pojo\Setmeal.class
+com\healthMedical\pojo\Member.class
+com\healthMedical\utils\QiniuUtils.class
+com\healthMedical\pojo\OrderSetting.class
+com\healthMedical\entity\QueryPageBean.class
+com\healthMedical\pojo\CheckItem.class
+com\healthMedical\pojo\Menu.class

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.healthMedical.mapper.setMealMapper">
+
+    <insert id="add" parameterType="com.healthMedical.pojo.Setmeal">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_setmeal
+        (code,name,sex,age,helpCode,price,remark,attention,img)
+        values
+        (#{code},#{name},#{sex},#{age},#{helpCode},#{price},#{remark},#{attention},#{img})
+    </insert>
+    <insert id="addCheckGroups" parameterType="map">
+        insert into t_setmeal_checkgroup values
+            (#{setmeal_id},#{checkgroup_id})
+    </insert>
+    <update id="update" parameterType="com.healthMedical.pojo.Setmeal">
+        update t_setmeal
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="sex != null">
+                code = #{code},
+            </if>
+            <if test="helpCode != null">
+                helpCode = #{helpCode},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="age != age">
+                age = #{age},
+            </if>
+            <if test="price != price">
+                price = #{price},
+            </if>
+            <if test="remark != remark">
+                img = #{img},
+            </if>
+            <if test="attention != null">
+                attention = #{attention},
+            </if>
+            <if test="img != null">
+                img = #{img},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateSetMealAndCheckGroup" parameterType="map">
+        insert into t_setmeal_checkgroup values(#{setmeal_id},#{checkgroup_id})
+    </update>
+    <delete id="deleteCheckGroupAndSetMealById" parameterType="int">
+        delete from t_setmeal_checkgroup where setmeal_id=#{id}
+    </delete>
+    <delete id="deleteSetMealById" parameterType="int">
+        delete from t_setmeal where id=#{id}
+    </delete>
+    <delete id="delete" parameterType="int">
+        delete from t_setmeal_checkgroup where setmeal_id=#{id}
+    </delete>
+    <select id="findSetMealByCondition" parameterType="string" resultType="com.healthMedical.pojo.Setmeal">
+        select * from t_setmeal
+        <if test="value!=null and value.length>0">
+            where code=#{value} or name=#{value} or helpCode=#{value}
+        </if>
+    </select>
+    <select id="getFileName" parameterType="int" resultType="java.lang.String">
+        select img from t_setmeal where id=#{id}
+    </select>
+    <select id="findSetMealById" parameterType="int" resultType="com.healthMedical.pojo.Setmeal">
+        select * from t_setmeal where id=#{id}
+    </select>
+    <select id="findCheckGroupsById" parameterType="int" resultType="java.lang.Integer">
+        select checkgroup_id from t_setmeal_checkgroup where setmeal_id=#{id}
+    </select>
+</mapper>
