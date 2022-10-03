@@ -1,24 +1,42 @@
 # 健康医疗
 
 #### 介绍
-技术栈：SSM+zookeeper+dubbo+redis+七牛云服务+小程序
+
+1.  该项目为黑马程序员的《传智健康》的项目。
+2.  完善了其中缺少的部分。在短信发送验证码使用发送邮件代替。
+3.  技术栈：SSM+zookeeper+dubbo+redis+七牛云服务+小程序。
+4.  分布式服务架构，无集群。
+5.  采用瀑布模型进行开发。
+6.  后面可能使用UML将该项目整理一下（用例图等）。
 
 #### 软件架构
 软件架构说明
-![输入图片说明](img1.png)
+![输入图片说明](img/1.png)
+#### 功能架构
+![输入图片说明](img/2.png)
+#### 项目结构
+![输入图片说明](img/10.png)
+各模块职责定位：
 
+health_parent：父工程，打包方式为pom。统一锁定依赖的版本、聚合其他子模块。
+。
+health_common：通用模块，打包方式为jar。存放项目中使用到的一些工具类、实体类、返回结果和常量类。
 
+health_interface：打包方式为jar，存放服务接口。
+
+health_service_provider：Dubbo服务模块，打包方式为war。存放服务实现类、Dao接口、Mapper映射文件等，作为服务提供方，需要部署到服务器运行（该项目使用tomcat服务器）。
+
+health_backend：传智健康管理后台，打包方式为war。作为Dubbo服务消费方，存放Controller、HTML页面、js、css、spring配置文件等，需要部署到服务器运行（该项目使用tomcat服务器）。
+
+health_mobile：移动端前台，打包方式为war。作为Dubbo服务消费方，存放Controller、HTML页面、js、css、spring配置文件等，需要部署到服务器运行（该项目使用tomcat服务器）。
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  修改dubbbo、zookeeper、数据库的配置。
+2.  因为采用的S分布式服务架构，所以要想消费者正常运行，服务提供者必须在部署在服务器上。
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  暂无
 
 #### 参与贡献
 
