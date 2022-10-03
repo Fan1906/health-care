@@ -1,3 +1,4 @@
-com\healthMedical\service\checkGroupService.class
 com\healthMedical\service\setMealService.class
+com\healthMedical\service\checkGroupService.class
 com\healthMedical\service\checkitemService.class
+com\healthMedical\service\orderSettingService.class
